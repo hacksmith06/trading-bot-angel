@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Details Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen font-sans">
+
+    <div class="flex flex-row h-full">
+
+        <!-- Sidebar -->
+        <div class="bg-blue-800 w-1/4 p-4 text-white">
+            <h1 class="text-2xl font-bold mb-4">Admin Dashboard</h1>
+            <ul>
+                <li class="mb-2 hover:bg-blue-700 px-2 py-1 rounded-md">
+                    <a href="#">Dashboard Home</a>
+                </li>
+                <li class="mb-2 hover:bg-blue-700 px-2 py-1 rounded-md">
+                    <a href="#">Stock Details</a>
+                </li>
+                <li class="mb-2 hover:bg-blue-700 px-2 py-1 rounded-md">
+                    <a href="#">Other Links</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert mb-4 p-4 rounded-md bg-{{ 'green' if category == 'success' else 'red' }}-500 text-white">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="bg-white p-6 rounded-md shadow-md mb-8">
+                <h2 class="text-xl font-bold mb-4">Authenticate</h2>
+                <form action="/authenticate" method="post">
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Authenticate</button>
+                </form>
+            </div>
+
+            <div class="bg-white p-6 rounded-md shadow-md">
+                <h2 class="text-xl font-bold mb-4">Fetch Historical Data</h2>
+                <form action="/fetch_historical_data" method="post">
+                    <div class="mb-4">
+                        <input type="text" name="exchange" placeholder="Exchange" class="p-2 border rounded-md w-full">
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" name="symboltoken" placeholder="Symbol Token" class="p-2 border rounded-md w-full">
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" name="interval" placeholder="Interval" class="p-2 border rounded-md w-full">
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" name="fromdate" placeholder="From Date" class="p-2 border rounded-md w-full">
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" name="todate" placeholder="To Date" class="p-2 border rounded-md w-full">
+                    </div>
+                    <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Fetch Historical Data</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
