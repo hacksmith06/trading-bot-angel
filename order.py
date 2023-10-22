@@ -26,7 +26,7 @@ if stock_token:
             "price": "OPTION_PRICE",          # Replace with your desired price
             "squareoff": "0",
             "stoploss": "0",
-            "quantity": "NUMBER_OF_CONTRACTS"  # Replace with the number of contracts you want to buy
+            "quantity": "1"  # Replace with the number of contracts you want to buy
         }
         orderId = smart_api.placeOrder(orderparams)
         print("The order id is: {}".format(orderId))
