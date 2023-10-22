@@ -197,4 +197,5 @@ target/
 *.odp
 
 # Project specific configuration file
-config.json
+config-arpit.json
+config-vidya.json
