@@ -4,7 +4,7 @@ import pyotp
 import json
 
 # Load configuration from config.json
-with open('config.json', 'r') as file:
+with open('config-arpit.json', 'r') as file:
     config = json.load(file)
 
 api_key = config["API_KEY"]
