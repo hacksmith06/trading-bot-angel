@@ -1,3 +1,5 @@
+# fetching_token_option_index.py
+
 import requests
 
 # Fetch the JSON data from the URL and load it once
@@ -15,13 +17,3 @@ def get_token(name, expiry, strike_and_option_type):
         if item.get('symbol') == symbol_pattern:
             return item.get('token')
     return None
-
-
-name = "NIFTY"
-expiry = "26OCT23"
-strike_and_option_type = "20900PE"
-token = get_token(name, expiry, strike_and_option_type)
-if token:
-    print(f"Token for {name} with expiry {expiry} and strike {strike_and_option_type} is: {token}")
-else:
-    print(f"No data found for {name} with expiry {expiry} and strike {strike_and_option_type}")
