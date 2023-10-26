@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "trading-bot-angel"
+version = "0.1.0"
+description = "Tatti"
+authors = ["Apoorva Singh <apoorvasingh157@gmail.com>"]
+readme = "README.md"
+packages = [{include = "trading_bot_angel"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyotp = "^2.9.0"
+smartapi-python = "^1.3.8"
+websocket-client = "^1.6.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
