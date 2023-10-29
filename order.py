@@ -23,7 +23,7 @@ if stock_token:
             "ordertype": "STOPLOSS_LIMIT",
             "producttype": "INTRADAY",
             "duration": "DAY",
-            "price": "OPTION_PRICE",          # Replace with your desired price
+            "price": "OPTION_PRICE",
             "squareoff": "0",
             "stoploss": "0",
             "quantity": "1"  # Replace with the number of contracts you want to buy
