@@ -8,7 +8,7 @@ import json
 
 def authenticate():
     # Load configuration from config.json
-    with open('config-arpit.json', 'r') as file:
+    with open('config_files/config-arpit.json', 'r') as file:
         config = json.load(file)
 
     api_key = config["API_KEY"]
