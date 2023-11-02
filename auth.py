@@ -1,5 +1,3 @@
-# auth.py
-
 # Import necessary packages
 from SmartApi import SmartConnect
 import pyotp
@@ -8,10 +6,10 @@ import json
 
 def authenticate():
     # Load configuration from config.json
-    with open('config_files/config-arpit.json', 'r') as file:
+    with open('config_files/config-vidya.json', 'r') as file:
         config = json.load(file)
 
-    api_key = config["API_KEY"]
+    api_key = config["API_KEY_TRADING"]
     client_id = config["CLIENT_ID"]
     password = config["PASSWORD"]
     totp_token = config["TOTP_TOKEN"]
